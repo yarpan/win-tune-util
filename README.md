@@ -5,10 +5,10 @@
 
 **TYPE:** Self Project
 
-**STATUS:** Basically works. Improvements and new features are in progerss.
+**STATUS:** Basically works. Improvements and new features are in progress.
 
 **STACK:** PowerShell
 
-**NOTES:** TBC
+**NOTES:** todo
 
-**DETAILED DESCRIPTION:** TBC
+**DETAILED DESCRIPTION:** todo
