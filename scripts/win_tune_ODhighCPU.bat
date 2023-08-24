@@ -15,4 +15,4 @@ del %USERPROFILE%\AppData\Local\Microsoft\OneDrive\logs\Common\standaloneUpdater
 del %USERPROFILE%\AppData\Local\Microsoft\OneDrive\setup\logs\parentTelemetryCache.otc
 del %USERPROFILE%\AppData\Local\Microsoft\OneDrive\setup\logs\parentTelemetryCache.otc.session
 
-OneDrive.exe
+"C:\Program Files\Microsoft OneDrive\OneDrive.exe"
