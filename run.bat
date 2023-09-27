@@ -1,4 +1,3 @@
-
 rem REG ADD "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\PowerShell\1\ShellIds\Microsoft.PowerShell" /v "ExecutionPolicy" /d "RemoteSigned" /t REG_SZ /f
 rem Restricted – No scripting allowed
 rem Unrestricted – You can run any script, No signing is required.
