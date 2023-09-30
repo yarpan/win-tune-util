@@ -52,6 +52,17 @@ schtasks /Change /TN "Microsoft\Office\OfficeTelemetryAgentFallBack" /Disable
 REM *** This task initiates Office Telemetry Agent, which scans and uploads usage and error information for Office solutions when a user logs on to the computer ***
 schtasks /Change /TN "Microsoft\Office\OfficeTelemetryAgentLogOn" /Disable
 
+REM *** Scans startup entries and raises notification to the user if there are too many startup entries ***
+schtasks /Change /TN "Microsoft\Windows\Application Experience\StartupAppTask" /Disable
+
+REM *** Protects user files from accidental loss by copying them to a backup location when the system is unattended ***
+schtasks /Change /TN "Microsoft\Windows\FileHistory\File History (maintenance mode)" /Disable
+
+REM *** This task gathers information about the Trusted Platform Module (TPM), Secure Boot, and Measured Boot ***
+schtasks /Change /TN "Microsoft\Windows\PI\Sqm-Tasks" /Disable
+
+REM *** This task analyzes the system looking for conditions that may cause high energy use ***
+schtasks /Change /TN "Microsoft\Windows\Power Efficiency Diagnostics\AnalyzeSystem" /Disable
 
 
 
