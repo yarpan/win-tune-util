@@ -1,5 +1,4 @@
 
-
 REM *** WINDOWS EXPLORER ***
 
 REM Disable or enable Compact View in Explorer using Registry
@@ -25,6 +24,9 @@ REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Ad
 REM Set File Explorer to Open This PC Instead of Quick Access
 REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "LaunchTo" /d "1" /t REG_DWORD /f
 REM 1 = This PC, 2 = Quick access, 3 = Downloads
+
+REM Remove Gallery in File Explorer Navigation Pane in Windows 11
+REG ADD "HKEY_CURRENT_USER\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}" /v "System.IsPinnedToNameSpaceTree" /d "0" /t REG_DWORD /f
 
 REM Show "This PC" menu in Navigation Pane
 REM REG ADD "HKEY_CURRENT_USER\Software\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /v "System.IsPinnedToNameSpaceTree" /d "1" /t REG_DWORD /f

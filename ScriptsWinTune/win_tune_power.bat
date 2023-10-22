@@ -31,8 +31,8 @@ REG ADD "HKEY_LOCAL_MACHINE\Software\Intel\Display\igfxcui\profiles\media\Darken
 REM Enable Hibernate to show in Windows 10 Power menu by Registry Editor
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power" /v "HibernateEnabled" /d "1" /t REG_DWORD /f
 
-REM Turn on fast startup
-REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\Power" /v "HiberbootEnabled" /d "1" /t REG_DWORD /f
+REM Turn off fast startup
+REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\Power" /v "HiberbootEnabled" /d "0" /t REG_DWORD /f
 
 
 
