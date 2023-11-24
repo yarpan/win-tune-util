@@ -7,7 +7,7 @@
 
 **STATUS:** Basically works. Improvements and new features are in progress.
 
-**STACK:** PowerShell
+**STACK:** PowerShell, WinCmd
 
 **NOTES:** todo
 
