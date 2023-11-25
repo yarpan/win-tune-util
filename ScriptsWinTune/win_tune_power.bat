@@ -1,6 +1,3 @@
-
-
-
 REM *** POWER MANAGEMENT ***
 
 REM to Change the Screen Timeout in Windows 11
