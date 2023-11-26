@@ -15,7 +15,10 @@ REM for turn on ...  /v "ShowSuperHidden" /t REG_DWORD /d 1 /f
 REM Show extensions for known file types
 REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideFileExt" /d "0" /t REG_DWORD /f
 
-REM Enable or Disable Folder Merge Conflicts in Windows 11
+REM Enable or Disable Info Tips For Desktop & Folder Content 
+REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\Current\Version\Explorer\Advanced" /v "ShowInfoTip" /d "1" /t REG_DWORD /f
+
+REM Enable or Disable Hiding Folder Merge Conflicts in Windows
 REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "HideMergeConflicts" /d "0" /t REG_DWORD /f
 
 REM Restore previous folder windows at logon
@@ -25,7 +28,7 @@ REM Set File Explorer to Open This PC Instead of Quick Access
 REG ADD "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /v "LaunchTo" /d "1" /t REG_DWORD /f
 REM 1 = This PC, 2 = Quick access, 3 = Downloads
 
-REM Remove Gallery in File Explorer Navigation Pane in Windows 11
+REM Remove Gallery in File Explorer Navigation Pane in Windows
 REG ADD "HKEY_CURRENT_USER\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}" /v "System.IsPinnedToNameSpaceTree" /d "0" /t REG_DWORD /f
 
 REM Show "This PC" menu in Navigation Pane
