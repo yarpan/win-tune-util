@@ -34,11 +34,19 @@ REG ADD "HKEY_CURRENT_USER\Software\Classes\CLSID\{e88865ea-0e1c-4e20-9aa6-edcd0
 REM Show "This PC" menu in Navigation Pane
 REM REG ADD "HKEY_CURRENT_USER\Software\Classes\CLSID\{20D04FE0-3AEA-1069-A2D8-08002B30309D}" /v "System.IsPinnedToNameSpaceTree" /d "1" /t REG_DWORD /f
 
+REM Set default position of Explorer window
+REM REG ADD "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders" /f
+REM REG ADD "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell" /v "WinPos1920x1200x120(1).left" /t REG_DWORD /d 0x000001f4 /f
+REM REG ADD "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell" /v "WinPos1920x1200x120(1).top" /t REG_DWORD /d 0x00000003 /f
+REM REG ADD "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell" /v "WinPos1920x1200x120(1).right" /t REG_DWORD /d 0x00000784 /f
+REM REG ADD "HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\Shell\Bags\AllFolders\Shell" /v "WinPos1920x1200x120(1).bottom" /t REG_DWORD /d 0x000002f1 /f
 
+REM You can enable or disable the "Prevent windows from being automatically arranged when moved to the edge of the screen"
+REM This means that window won't stick automatically to the screen's edge when window's border is near the edge
+REM To enable the feature (prevent automatic arrangement) - set value to 0, to disable - set value to 1
+REG ADD "HKCU\Control Panel\Desktop" /v WindowArrangementActive /t REG_SZ /d 0 /f
 
 
 REM to make this change take effect, restart explorer
 taskkill /F /IM explorer.exe
 explorer.exe
-
-
