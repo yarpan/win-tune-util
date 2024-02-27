@@ -1,5 +1,5 @@
 
-rem Disable Prefetch и SuperFetch 
+rem Disable Prefetch и SuperFetch
 sc stop "SysMain" & sc config "SysMain" start=disabled
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\Memory" /v "EnablePrefetcher" /d "00000000" /t REG_DWORD /f
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\Memory" /v "EnableSuperfetcher" /d "00000000" /t REG_DWORD /f

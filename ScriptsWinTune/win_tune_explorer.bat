@@ -47,6 +47,14 @@ REM To enable the feature (prevent automatic arrangement) - set value to 0, to d
 REG ADD "HKCU\Control Panel\Desktop" /v WindowArrangementActive /t REG_SZ /d 0 /f
 
 
+
+REM Remove Home from File Explorer in Windows 11 
+REG DEL "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace_36354489\{f874310e-b6b7-47dc-bc84-b9e6b38f5903}"
+
+REM Remove Gallery from File Explorer
+REG DEL "Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\Desktop\NameSpace_41040327\{e88865ea-0e1c-4e20-9aa6-edcd0212c87c}"
+
+
 REM to make this change take effect, restart explorer
 taskkill /F /IM explorer.exe
 explorer.exe
