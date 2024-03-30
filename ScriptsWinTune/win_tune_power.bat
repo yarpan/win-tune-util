@@ -1,8 +1,8 @@
 REM *** POWER MANAGEMENT ***
 
 REM to Change the Screen Timeout in Windows 11
-powercfg -change -monitor-timeout-ac 30
-powercfg -change -monitor-timeout-dc 20
+powercfg -change -monitor-timeout-ac 20
+powercfg -change -monitor-timeout-dc 10
 
 
 REM Enable or Disable Adaptive Brightness for Current Power Plan in Command Prompt
