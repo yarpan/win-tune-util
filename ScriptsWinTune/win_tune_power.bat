@@ -31,6 +31,18 @@ REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Power" /v "Hibernat
 REM Turn off fast startup
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\SessionManager\Power" /v "HiberbootEnabled" /d "0" /t REG_DWORD /f
 
+REM Add "USB selective suspend setting" in Power Options
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\2a737441-1930-4402-8d77-b2bebba308a3\48e6b7a6-50f5-4782-a5d4-53bb8f07e226 /v Attributes /t REG_DWORD /d 2 /f
 
+REM Add "Hub Selective Suspend Timeout" in Power Options
+REG ADD HKLM\SYSTEM\CurrentControlSet\Control\Power\PowerSettings\2a737441-1930-4402-8d77-b2bebba308a3\0853a681-27c8-4100-a2fd-82013e970683 /v Attributes /t REG_DWORD /d 2 /f
 
-
+REM Restore Missing Default Power Plans
+REM (Power saver)
+powercfg -duplicatescheme a1841308-3541-4fab-bc81-f71556f20b4a
+REM (Balanced)
+powercfg -duplicatescheme 381b4222-f694-41f0-9685-ff5bb260df2e
+REM (High Performance)
+powercfg -duplicatescheme 8c5e7fda-e8bf-4a96-9a85-a6e23a8c635c
+REM (Ultimate Performance - Windows 10 build 17101 and later)
+powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
