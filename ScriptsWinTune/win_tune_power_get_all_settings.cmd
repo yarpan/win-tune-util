@@ -1,0 +1,1 @@
+powercfg /QH >"%UserProfile%\Desktop\PowerPlanSettings.txt"
