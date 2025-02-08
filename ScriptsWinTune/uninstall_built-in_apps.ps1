@@ -46,6 +46,10 @@ get-appxpackage *zunemusic* | remove-appxpackage # To uninstall Groove Music
 get-appxpackage *zunevideo* | remove-appxpackage # To uninstall Movies & TV
 
 
+Get-AppxPackage Microsoft.YourPhone -AllUsers | Remove-AppxPackage
+Get-AppxPackage Microsoft.XboxGamingOverlay | Remove-AppxPackage
+
+
 # To Restore Windows 10's Built-in Apps
 # Windows PowerShell - Run as administrator
 get-appxpackage -AllUsers| Foreach {Add-AppxPackage -DisableDevelopmentMode -Register “$($_.InstallLocation)\AppXManifest.xml”}

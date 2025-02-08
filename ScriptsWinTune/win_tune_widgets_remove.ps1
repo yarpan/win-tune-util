@@ -22,3 +22,8 @@ Get-ScheduledTask | Where-Object {$_.TaskName -like "*widget*"} | Disable-Schedu
 
 # Remove Registry Key to Disable Widgets
 Remove-Item -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\Dsh" -Recurse -Force
+
+# More variants
+Get-AppxPackage *WebExperience* | Remove-AppxPackage
+winget uninstall "Windows web experience Pack"
+winget uninstall --id 9MSSGKG348SP
