@@ -8,6 +8,27 @@ rmdir /s /q C:\Windows\Prefetch
 REM  *** Turn Off Delivery Optimization for Windows Update
 REG ADD "HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\DoSvc" /v "Start" /t REG_DWORD /d "4" /f
 
+REM  *** Disable suggested apps in Start Menu
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338389Enabled /t REG_DWORD /d 0 /f
+:: Prevents Start Menu from showing "recommended" apps
+
+REM  *** Disable tips and ads in Windows Search
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\SearchSettings" /v IsDynamicSearchBoxEnabled /t REG_DWORD /d 0 /f
+:: Removes Bing banners and suggestions inside the Search panel
+
+REM  *** Disable Windows Spotlight on Lock Screen
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v RotatingLockScreenEnabled /t REG_DWORD /d 0 /f
+:: Stops Spotlight from changing Lock Screen background with ads
+
+REM  *** Disable tips/ads on Lock Screen
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v RotatingLockScreenOverlayEnabled /t REG_DWORD /d 0 /f
+:: Removes "fun facts, tips, tricks, and suggestions" on the Lock Screen
+
+REM  *** Disable system-wide suggestions and popups
+reg add "HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager" /v SubscribedContent-338388Enabled /t REG_DWORD /d 0 /f
+REM  *** Prevents Windows from showing system notifications like "Try Edge"
+
+
 rem Disable folder "3D Objects" in Explorer 
 REG DELETE "HKLM\Software\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace\{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" /f
 REG DELETE "HKLM\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Explorer\MyComputer\NameSpace{0DB7E03F-FC29-4DC6-9020-FF41B59E513A}" /f
